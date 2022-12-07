@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Points Clicker</title>
+</head>
+<body>
+
+<h1>Points Clicker</h1>
+
+<div id="pointsDisplay">
+   <p>Points: <span id="points">0</span></p>
+</div>
+
+<button id="clicker" onclick="addPoints()">Click to get points!</button>
+
+<div id="shop">
+   <h2>Shop</h2>
+   <p>Buy upgrades to get more points!</p>
+   <ul>
+       <li><button onclick="buyUpgrade('changeBackground')">Deprive Yourself of 50 points</button></li>
+       <li><button onclick="buyUpgrade('doublePoints')">Double Points: 100 points</button></li>
+       <li><button onclick="buyUpgrade('quadruplePoints')">Quadruple Points: 200 points</button></li>
+       <li><button onclick="buyUpgrade('quintuplePoints')">Quintuple Points: 800 points</button></li>
+
+   </ul>
+</div>
+
+<div id="rickroll">
+   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"> Not a Rickroll</a>
+</div>
+
+<img id="smiley" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/440px-Smiley.svg.png" alt="Happy Smiley Face" />
+
+<div id="roll">
+   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img id="smiley" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/440px-Smiley.svg.png" alt="Happy Smiley Face" /></a>
+</div>
+
+<style>
+   #clicker {k
+       font: 100px;
+       height: 200px;
+       width: 400px;
+       display: flexbox;
+       align-items: center;
+       justify-content: center;
+   }
+
+   #rickroll {
+       display: none;
+   }
+</style>
+
+<script>
+   let points = 0;
+   let upgrades = {
+       changeBackground: false,
+       doublePoints: false,
+       quadruplePoints: false,
+       quintuplePoints: false
+
+   }
+
+   // Update the points display
+   let updatePointsDisplay = () => {
+       document.querySelector('#points').innerHTML = points;
+   }
+
+   // Add points when the button is clicked
+   let addPoints = () => {
+       let pointsToAdd = 1;
+       if (upgrades.doublePoints) {
+           pointsToAdd *= 2;
+       }
+       if (upgrades.quadruplePoints) {
+           pointsToAdd *= 4;
+       }
+       if (upgrades.quintuplePoints) {
+           pointsToAdd *= 5;
+           }
+
+       points += pointsToAdd;
+       updatePointsDisplay();
+
+              if (points === 2) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+              if (points === 10) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+              if (points === 50) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+              if (points === 100) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+
+       if (points === 1000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 2000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 3000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 4000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 5000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 6000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 7000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 8000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points === 9000) {
+           document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+       }
+       if (points >= 10000) {         document.querySelector('#rickroll').style.display = 'block';
+       }
+
+   }
+
+   // Buy an upgrade
+   let buyUpgrade = (upgrade) => {
+       if (upgrade === 'changeBackground' && points >= 50) {
+           upgrades.changeBackground = true;
+           points -= 50;
+           updatePointsDisplay();
+       }
+       if (upgrade === 'doublePoints' && points >= 100) {
+           upgrades.doublePoints = true;
+           points -= 100;
+           updatePointsDisplay();
+       }
+       if (upgrade === 'quadruplePoints' && points >= 200) {
+           upgrades.quadruplePoints = true;
+           points -= 200;
+           updatePointsDisplay();
+       }
+       if (upgrade === 'quintuplePoints' && points >= 800) {
+           upgrades.quintuplePoints = true;
+           points -= 800;
+           updatePointsDisplay();
+       }
+   }
+
+
+</script>
+
+</body>
+</html>
